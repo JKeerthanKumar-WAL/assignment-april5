@@ -1,0 +1,10 @@
+const express = require("express");
+const router = express.Router();
+const usersController = require("../controllers/squsers");
+router.get("/", usersController.getUsers);
+router.post("/", usersController.createUser);
+router.put("/:username", usersController.updateUser);
+router.delete("/:username", usersController.deleteUser);
+router.post("/checklogin", usersController.checkLogin);
+router.get("/loginuser", usersController.loginUser);
+module.exports = router;
